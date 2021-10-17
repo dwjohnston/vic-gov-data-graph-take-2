@@ -9,9 +9,14 @@
   },
   "dependencies": {
     "@dpc-sdp/ripple-button": "^1.25.0-alpha.0",
+    "@dpc-sdp/ripple-layout": "^1.24.4",
+    "@dpc-sdp/ripple-markup": "^1.24.4",
+    "@dpc-sdp/ripple-site-footer": "^1.24.4",
+    "@dpc-sdp/ripple-site-header": "^1.24.4",
     "core-js": "^3.6.5",
     "sass": "^1.43.2",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-plotly": "^1.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -36,7 +41,9 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-unused-vars": "warn"
+    }
   },
   "browserslist": [
     "> 1%",

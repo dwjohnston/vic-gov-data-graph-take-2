@@ -1,23 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-
-
-    <rpl-button theme="primary">foo bar</rpl-button>
+    <rpl-header/>
+    <my-chart />
+    <rpl-footer/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import RplButton from '@dpc-sdp/ripple-button';
+
+import MyChart from './components/MyChart.vue';
+import RplHeader from "@dpc-sdp/ripple-site-header"; 
+import RplFooter from "@dpc-sdp/ripple-site-footer"; 
+
 
 
 export default {
   name: 'App',
   components: {
-    HelloWorld, 
-    RplButton,
+    MyChart,
+    RplHeader, 
+    RplFooter,
   }
 }
 </script>
