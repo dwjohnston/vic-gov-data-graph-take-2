@@ -17,6 +17,7 @@ https://github.com/dpc-sdp/ripple/issues/1069
 Other issues I raised on the repo: 
 
 https://github.com/dpc-sdp/ripple/issues/1070
+
 https://github.com/dpc-sdp/ripple/issues/1066
 
 Pull request to update documentation: 
