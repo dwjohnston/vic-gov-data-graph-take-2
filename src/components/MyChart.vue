@@ -20,14 +20,13 @@ export default {
 
   data() {
 
+    const rawData = this.$root.$store.state.chartData; 
 
-    const rawData = this.$root.$data.chartData; 
     rawData.sort((a,b) => {
       return a.year - b.year; 
     }); 
 
     const x = rawData.map((v) => v.year);
-
     const y = rawData.map((v) =>v.count);
 
 

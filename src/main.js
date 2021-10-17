@@ -1,17 +1,23 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Vuex from 'vuex'
 
-import RplGlobal from '@dpc-sdp/ripple-global'
+
 import {Plotly} from "vue-plotly";
 
+Vue.use(Vuex);
 
-const state = {
-  data: [], 
-  setData: function(data) {
-    console.log(this);
-    this.data = data; 
+
+const store = new Vuex.Store({
+  state: {
+    chartData: [],
+  },
+  mutations: {
+    setChartData (oldState, data) {
+      oldState.chartData = data; 
+    }
   }
-}
+})
 
 async function fetchState() {
 
@@ -62,31 +68,23 @@ async function fetchState() {
       }
   ]; 
 
-  state.setData(data);
+  store.commit('setChartData', data);
 }
 
 
 fetchState();
 
-
-
-// Install Ripple Global plugin
-const rplOptions = {
-  // Your custom options
-  // https://github.com/dpc-sdp/ripple/tree/develop/packages/components/Atoms/Global#rploptions
-  rplMarkup: { plugins: [] }
-}
-Vue.use(RplGlobal, rplOptions); 
-
 Vue.use(Plotly);
+
 
 Vue.config.productionTip = false
 
-new Vue({
+const app =new Vue({
   render: h => h(App),
-  data: {
-    chartData: state.data,
-  }
+  store: store,
+
 }).$mount('#app')
+
+
 
 
