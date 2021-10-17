@@ -1,6 +1,10 @@
 // vue.config.js
 module.exports = {
     // To use Ripple Markup or relevant components like Ripple Accordion
+    transpileDependencies: [
+      "@dpc-sdp/ripple-global"
+    ],
+
     configureWebpack: {
       resolve: {
         alias: {
